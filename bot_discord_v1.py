@@ -1,18 +1,16 @@
-import discord
-import json
-from discord.ext import commands
+class Node :
+    def __init__(self, question, keyword, list_child_node):
+        self.question = question
+        self.keyword = keyword
+        self.list_child_node = list_child_node
 
-with open('data.json') as mon_fichier:
-    data = json.load(mon_fichier)
+    def user_response(self):
+        print(self.question)
+        txt = input()
+        for child in self.list_child_node:
+            if child.keyword in txt:
+                child.user_response()
 
-class Node:
-    def __init__(self,data):
-        self.data = data
-        self.children = []
-        self.parent = None
+first_node =Node("Comment puis je vous aider ?" , "help" , [Node("Sur quel sujet ?" , "cours" , ["html","css","js"]) , Node("Sur quel domaine?" , "fichier" , ["video","texte"])])
 
-    def add_child(self, child):
-        child.parent = self
-        self.children.append(child)
-
-print(data)
+Node.user_response()
