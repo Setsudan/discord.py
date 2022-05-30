@@ -106,7 +106,7 @@ async def test(ctx):
 
 @client.command()
 async def liste(ctx):
-    msg_content = ', \n '.join(availiable_list)
+    msg_content = ',\n '.join(availiable_list)
     await ctx.send("voici la liste des languages disponible pour le moment")
     await ctx.send(msg_content)
 
