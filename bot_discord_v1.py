@@ -109,7 +109,7 @@ async def aide(ctx):
         print(reponse2.content)
         print("ok suivant")
 
-        for i in range(0,2):
+        for i in len.Node.availiable_list:
             if reponse2.content in first_node.list_child_node[0].list_child_node[i].keyword:
                 await ctx.send(first_node.list_child_node[0].list_child_node[i].question)
                 await ctx.send(first_node.list_child_node[0].list_child_node[i].list_child_node)
@@ -121,7 +121,7 @@ async def aide(ctx):
         print(reponse2.content)
         print("ok suivant")
 
-        for i in range(0,2):
+        for i in len.Node.availiable_list:
             if reponse2.content in first_node.list_child_node[1].list_child_node[i].keyword:
                 await ctx.send(first_node.list_child_node[1].list_child_node[i].question)
                 await ctx.send(first_node.list_child_node[1].list_child_node[i].list_child_node)
