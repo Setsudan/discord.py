@@ -1,3 +1,5 @@
+from pickle import APPEND
+from xml.etree.ElementTree import tostring
 import discord
 from discord.ext import commands
 
@@ -52,9 +54,9 @@ Node("Sur quel language tu as besoin d'un tuto?" , "tuto" ,
  Node(tuto_msg,["flutter"],["https://youtu.be/VPvVD8t02U8"])
  ]),
 Node("Sur quel language tu as besoin d'une documentation?" , "documentation" , 
-[Node(docu_msg,"html",["https://developer.mozilla.org/fr/docs/Web/HTML"]),
-Node(docu_msg,"python",["https://docs.python.org/fr/3/"]),
- Node(docu_msg,  ["css"],["https://devdocs.io/css/"]),
+[Node(docu_msg,["html"],["https://developer.mozilla.org/fr/docs/Web/HTML"]),
+Node(docu_msg, ["python"],["https://docs.python.org/fr/3/"]),
+ Node(docu_msg,["css"],["https://devdocs.io/css/"]),
  Node(docu_msg,["javascript","js"],["https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"]),
  Node(docu_msg,["scss","sass"],["https://sass-lang.com/guide"]),
  Node(docu_msg,["react","reactjs"],["https://reactjs.org/docs/getting-started.html"]),
@@ -104,7 +106,9 @@ async def test(ctx):
 
 @client.command()
 async def liste(ctx):
-    await ctx.send(availiable_list)
+    msg_content = ', \n '.join(availiable_list)
+    await ctx.send("voici la liste des languages disponible pour le moment")
+    await ctx.send(msg_content)
 
 ### Commande d'aide pour un language de programmation ( "!" )###
 
