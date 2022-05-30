@@ -1,5 +1,3 @@
-from pickle import APPEND
-from xml.etree.ElementTree import tostring
 import discord
 from discord.ext import commands
 
@@ -27,8 +25,9 @@ docu_msg = "Voilà ta docu pour"
 first_node = Node("Salut, je suis le bot qui va t'aider !\nOn va voir ce qu'on peut faire...\nTu veut un tuto ou une documentation ?\nSi tu ne sait pas, écrit '!liste'" , "start",
 [
 Node("Sur quel language tu as besoin d'un tuto?" , "tuto" , 
-[Node(tuto_msg, ["html","html5"],["https://www.youtube.com/watch?v=qsbkZ7gIKnc"]),
- Node(tuto_msg,  ["css"],["https://youtu.be/gXLjWRteuWI"]),
+[Node(tuto_msg,["html","html5"],["https://www.youtube.com/watch?v=qsbkZ7gIKnc"]),
+ Node(tuto_msg,["python"],["https://youtu.be/rfscVS0vtbw"]),
+ Node(tuto_msg,["css"],["https://youtu.be/gXLjWRteuWI"]),
  Node(tuto_msg,["javascript","js"],["https://youtu.be/PkZNo7MFNFg"]),
  Node(tuto_msg,["scss","sass"],["https://youtu.be/_a5j7KoflTs"]),
  Node(tuto_msg,["react","reactjs"],["https://youtu.be/bMknfKXIFA8"]),
@@ -82,7 +81,6 @@ Node(docu_msg, ["python"],["https://docs.python.org/fr/3/"]),
  Node(docu_msg,["flutter"],["https://docs.flutter.dev/"])
 ])
 ])
-
 availiable_list = []
 count=0
 for child in first_node.list_child_node[0].list_child_node:
@@ -109,6 +107,7 @@ async def liste(ctx):
     msg_content = ',\n '.join(availiable_list)
     await ctx.send("voici la liste des languages disponible pour le moment")
     await ctx.send(msg_content)
+    await ctx.send("Rappeler le bot avec !aide et dites nous votre choix parmi la liste disponible")
 
 ### Commande d'aide pour un language de programmation ( "!" )###
 
@@ -123,7 +122,7 @@ async def aide(ctx):
     ### On attend la réponse de l'utilisateur
     reponse = await client.wait_for("message", check = check)
     ### On regarde si le message est dans la liste contenant le mot clé tuto
-    if reponse.content in first_node.list_child_node[0].keyword:
+    if first_node.list_child_node[0].keyword in reponse.content:
         await ctx.send(first_node.list_child_node[0].question)
         ### On attend encore la réponse de l'utilisateur
         reponse2 = await client.wait_for("message", check = check)
@@ -136,7 +135,7 @@ async def aide(ctx):
     
     ### Exactement même procésus que pour le tuto mais pour la documentation
 
-    elif reponse.content in first_node.list_child_node[1].keyword:
+    elif first_node.list_child_node[1].keyword in reponse.content:
         await ctx.send(first_node.list_child_node[1].question)
         reponse2 = await client.wait_for("message", check = check)
         print(reponse2.content)

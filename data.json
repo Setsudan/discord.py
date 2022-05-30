@@ -1,109 +1,150 @@
 {
   "html": {
-    "documentations": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics",
-    "video": ""
-  },
-  "css": {
-    "documentations": "https://devdocs.io/css/",
-    "video": ""
-  },
-  "javascript": {
-    "documentations": " https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide",
-    "video": ""
-  },
-  "scss": {
-    "documentations": "https://sass-lang.com/guide",
-    "video": ""
-  },
-  "react": {
-    "documentations": "https://reactjs.org/docs/getting-started.html",
-    "video": ""
-  },
-  "vue": {
-    "documentations": "https://vuejs.org/guide/introduction.html",
-    "video": ""
-  },
-  "next": {
-    "documentations": "https://nextjs.org/docs/getting-started",
-    "video": ""
-  },
-  "solidjs": {
-    "documentations": "https://www.solidjs.com/guides/getting-started",
-    "video": ""
-  },
-  "remix": {
-    "documentations": "https://remix.run/docs/en/v1",
-    "video": ""
-  },
-  "prisma": {
-    "documentations": "https://www.prisma.io/docs/",
-    "video": ""
-  },
-  "strapi": {
-    "documentations": "https://strapi.io/resource-center",
-    "video": ""
-  },
-  "tailwindcss": {
-    "documentations": "https://tailwindcss.com/docs/installation",
-    "video": ""
-  },
-  "bootstrap": {
-    "documentations": "https://getbootstrap.com/docs/5.2/getting-started/introduction/",
-    "video": ""
+    "documentation": ["https://developer.mozilla.org/fr/docs/Web/HTML"],
+    "typo": ["html", "html5"],
+    "tuto": ["https://www.youtube.com/watch?v=qsbkZ7gIKnc"]
   },
   "python": {
-    "documentations": "https://docs.python.org/3/",
-    "video": ""
+    "documentation": ["https://docs.python.org/fr/3/"],
+    "typo": ["python"],
+    "tuto": ["https://youtu.be/rfscVS0vtbw"]
   },
-  "C": {
-    "documentations": "https://docs.microsoft.com/en-us/cpp/c-language/?view=msvc-170",
-    "video": ""
+  "css": {
+    "documentation": ["https://devdocs.io/css/"],
+    "typo": ["css"],
+    "tuto": ["https://youtu.be/gXLjWRteuWI"]
   },
-  "C++": {
-    "documentations": "https://docs.microsoft.com/en-us/cpp/cpp/?view=msvc-170",
-    "video": ""
+  "javascript": {
+    "documentation": [
+      "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+    ],
+    "typo": ["javascript", "js"],
+    "tuto": ["https://youtu.be/PkZNo7MFNFg"]
   },
-  "C#": {
-    "documentations": "https://docs.microsoft.com/en-us/dotnet/csharp/",
-    "video": ""
+  "scss": {
+    "documentation": ["https://sass-lang.com/guide"],
+    "typo": ["scss", "sass"],
+    "tuto": ["https://youtu.be/_a5j7KoflTs"]
   },
-  "MarkDown": {
-    "documentations": "https://www.markdownguide.org/",
-    "video": ""
+  "react": {
+    "documentation": ["https://reactjs.org/docs/getting-started.html"],
+    "typo": ["react", "reactjs"],
+    "tuto": ["https://youtu.be/bMknfKXIFA8"]
+  },
+  "vue": {
+    "documentation": ["https://vuejs.org/guide/introduction.html"],
+    "typo": ["vue", "vuejs"],
+    "tuto": ["https://youtu.be/FXpIoQ_rT_c"]
+  },
+  "next": {
+    "documentation": ["https://nextjs.org/docs/getting-started"],
+    "typo": ["next", "nextjs"],
+    "tuto": ["https://youtu.be/1WmNXEVia8I"]
+  },
+  "remix": {
+    "documentation": ["https://remix.run/docs/en/v1"],
+    "typo": ["remix", "remixjs", "remixrun"],
+    "tuto": ["https://youtu.be/3CAqFdVlbUA"]
+  },
+  "prisma": {
+    "documentation": ["https://www.prisma.io/docs"],
+    "typo": ["prisma"],
+    "tuto": ["https://youtu.be/_iFec6mZg24"]
+  },
+  "typescript": {
+    "documentation": ["https://devdocs.io/typescript/typescript-from-scratch"],
+    "typo": ["typescript", "ts"],
+    "tuto": ["https://youtu.be/gp5H0Vw39yw"]
   },
   "php": {
-    "documentations": "https://www.freecodecamp.org/news/build-a-website-from-start-to-finish-using-wordpress-and-php/",
-    "video": ""
-  },
-  "git": {
-    "documentations": "",
-    "video": "https://www.freecodecamp.org/news/git-and-github-crash-course/"
-  },
-  "NodeJs": {
-    "documentations": "https://nodejs.org/api/documentation.html",
-    "video": ""
+    "documentation": [
+      "https://www.freecodecamp.org/news/build-a-website-from-start-to-finish-using-wordpress-and-php"
+    ],
+    "typo": ["php"],
+    "tuto": ["https://youtu.be/2eebptXfEvw"]
   },
   "sql": {
-    "documentations": "https://docs.microsoft.com/en-us/sql/?view=sql-server-ver16",
-    "video": ""
+    "documentation": [
+      "https://docs.microsoft.com/en-us/sql/?view=sql-server-ver16"
+    ],
+    "typo": ["sql"],
+    "tuto": ["https://youtu.be/Cz3WcZLRaWc"]
   },
-  "postgresql": {
-    "documentations": "https://www.postgresql.org/docs/",
-    "video": ""
+  "strapi": {
+    "documentation": ["https://strapi.io/resource-center"],
+    "typo": ["strapi"],
+    "tuto": [
+      "https://youtube.com/playlist?list=PL4cUxeGkcC9h6OY8_8Oq6JerWqsKdAPxn"
+    ]
   },
-  "flutter": {
-    "documentations": "https://docs.flutter.dev/",
-    "video": "https://www.youtube.com/watch?v=VPvVD8t02U8&feature=youtu.be"
+  "tailwind": {
+    "documentation": ["https://tailwindcss.com/docs/installation"],
+    "typo": ["tailwind", "tailwindcss"],
+    "tuto": [
+      "https://youtube.com/playlist?list=PL4cUxeGkcC9gpXORlEHjc5bgnIi5HEGhw"
+    ]
+  },
+  "bootstrap": {
+    "documentation": [
+      "https://getbootstrap.com/docs/5.2/getting-started/introduction"
+    ],
+    "typo": ["bootstrap", "bootstrap 5"],
+    "tuto": ["https://youtu.be/O_9u1P5YjVc"]
+  },
+  "c": {
+    "documentation": [
+      "https://docs.microsoft.com/en-us/cpp/c-language/?view=msvc-170"
+    ],
+    "typo": ["c"],
+    "tuto": ["https://youtu.be/KJgsSFOSQv0"]
+  },
+  "c++": {
+    "documentation": [
+      "https://docs.microsoft.com/en-us/cpp/cpp/?view=msvc-170"
+    ],
+    "typo": ["c++", "c plus plus"],
+    "tuto": ["https://youtu.be/vLnPwxZdW4Y"]
+  },
+  "c#": {
+    "documentation": ["https://docs.microsoft.com/en-us/dotnet/csharp/"],
+    "typo": ["c#", "csharp", "c sharp"],
+    "tuto": ["https://youtu.be/GhQdlIFylQ8"]
+  },
+  "markdown": {
+    "documentation": ["https://www.markdownguide.org"],
+    "typo": ["markdown", "md"],
+    "tuto": ["https://youtu.be/HUBNt18RFbo"]
+  },
+  "git": {
+    "documentation": ["https://training.github.com/"],
+    "typo": ["git", "github"],
+    "tuto": ["https://youtu.be/RGOj5yH7evk"]
+  },
+  "node": {
+    "documentation": ["https://nodejs.org/api/documentation.html"],
+    "typo": ["node", "nodejs"],
+    "tuto": [
+      "https://youtube.com/playlist?list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU"
+    ]
+  },
+  "postgresSQL": {
+    "documentation": ["https://www.postgresql.org/docs"],
+    "typo": ["postgresSQL", "postgres"],
+    "tuto": ["https://youtu.be/qw--VYLpxG4"]
   },
   "svelte": {
-    "documentations": "https://www.freecodecamp.org/news/want-to-learn-svelte-heres-our-free-15-part-course-by-noah-kaufman/",
-    "video": ""
+    "documentation": ["https://svelte.dev/docs"],
+    "typo": ["svelte"],
+    "tuto": ["https://youtu.be/ujbE0mzX-CU"]
   },
   "java": {
-    "documentations": "https://docs.oracle.com/en/java/",
-    "video": ""
+    "documentation": ["https://docs.oracle.com/en/java/"],
+    "typo": ["java"],
+    "tuto": ["https://youtu.be/grEKMHGYyns"]
   },
-  "*": {
-    "url": "https://devdocs.io/"
+  "flutter": {
+    "documentation": ["https://docs.flutter.dev/"],
+    "typo": ["flutter"],
+    "tuto": ["https://youtu.be/VPvVD8t02U8"]
   }
 }
