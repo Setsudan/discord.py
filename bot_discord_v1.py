@@ -22,7 +22,7 @@ class Node :
 tuto_msg = "Voilà ton tuto pour"
 docu_msg = "Voilà ta docu pour"
 
-first_node = Node("Salut, je suis le bot qui va t'aider !\nOn va voir ce qu'on peut faire...\nTu veut un tuto ou une documentation ?" , "start",
+first_node = Node("Salut, je suis le bot qui va t'aider !\nOn va voir ce qu'on peut faire...\nTu veut un tuto ou une documentation ?\nSi tu ne sait pas, écrit '!liste'" , "start",
 [
 Node("Sur quel language tu as besoin d'un tuto?" , "tuto" , 
 [Node(tuto_msg, ["html","html5"],["https://www.youtube.com/watch?v=qsbkZ7gIKnc"]),
@@ -79,8 +79,13 @@ Node(docu_msg,"python",["https://docs.python.org/fr/3/"]),
  Node(docu_msg,["java"],["https://docs.oracle.com/en/java/"]),
  Node(docu_msg,["flutter"],["https://docs.flutter.dev/"])
 ])
-,Node("Voici une liste de tout les languages disponible",["je sais pas","je ne sais pas","jsp"],lang_list())
 ])
+
+availiable_list = []
+count=0
+for child in first_node.list_child_node[0].list_child_node:
+    availiable_list.append(first_node.list_child_node[0].list_child_node[count].keyword[0])
+    count += 1
 
 ### Attendre le print dans la console pour être sûr que tout est bon ###
 
@@ -95,6 +100,11 @@ async def test(ctx):
     print("test effecuté")
     await ctx.send(first_node.list_child_node[0].list_child_node[0].list_child_node)
     await ctx.send(first_node.list_child_node[0].list_child_node[0].keyword)
+
+
+@client.command()
+async def liste(ctx):
+    await ctx.send(availiable_list)
 
 ### Commande d'aide pour un language de programmation ( "!" )###
 
@@ -115,7 +125,7 @@ async def aide(ctx):
         reponse2 = await client.wait_for("message", check = check)
         print(reponse2.content)
         ### On fait une boucle for qui vérifie si la réponse est dans la longue liste des language contenant le mot clé de celui-ci
-        for i in range(0,10):
+        for i in range(0,len(availiable_list)):
             if reponse2.content in first_node.list_child_node[0].list_child_node[i].keyword:
                 await ctx.send(first_node.list_child_node[0].list_child_node[i].question)
                 await ctx.send(first_node.list_child_node[0].list_child_node[i].list_child_node)
@@ -128,7 +138,7 @@ async def aide(ctx):
         print(reponse2.content)
         print("ok suivant")
 
-        for i in range(0,10):
+        for i in range(0,len(availiable_list)):
             if reponse2.content in first_node.list_child_node[1].list_child_node[i].keyword:
                 await ctx.send(first_node.list_child_node[1].list_child_node[i].question)
                 await ctx.send(first_node.list_child_node[1].list_child_node[i].list_child_node)
