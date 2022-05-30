@@ -17,11 +17,7 @@ class Node :
         for child in self.list_child_node:
             if child.keyword in txt:
                 child.user_response()
-    def lang_list(self):
-        availiable_list = []
-        for child in self.list_child_node:
-            availiable_list.append(first_node.list_child_node[0].list_child_node[0].list_child_node[0])
-        return availiable_list;
+
 
 tuto_msg = "Voilà ton tuto pour"
 docu_msg = "Voilà ta docu pour"
@@ -83,7 +79,7 @@ Node(docu_msg,"python",["https://docs.python.org/fr/3/"]),
  Node(docu_msg,["java"],["https://docs.oracle.com/en/java/"]),
  Node(docu_msg,["flutter"],["https://docs.flutter.dev/"])
 ])
-,Node("Voici une liste de tout les languages disponible",["je sais pas","je ne sais pas","jsp"],Node.lang_list())
+,Node("Voici une liste de tout les languages disponible",["je sais pas","je ne sais pas","jsp"],lang_list())
 ])
 
 ### Attendre le print dans la console pour être sûr que tout est bon ###
