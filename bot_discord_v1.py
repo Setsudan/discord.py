@@ -26,12 +26,14 @@ class Node :
 
 tuto_msg = "Voilà ton tuto pour "
 docu_msg = "Voilà ta docu pour "
-
+# ? Création procédurale de la liste des tuto à partir de data.json
 tuto_list = []
 all_lang = data.keys()
 for lang in all_lang:
     msg = tuto_msg + lang
     tuto_list.append(Node(msg,data[lang]["typo"],data[lang]["tuto"]))
+
+# ? Création procédurale de la liste des docus à partir de data.json
 docu_list = []
 for lang in all_lang:
     msg = tuto_msg + lang
@@ -39,7 +41,9 @@ for lang in all_lang:
 
 first_node = Node(
 "Salut, je suis le bot qui va t'aider !\nOn va voir ce qu'on peut faire...\nTu veut un tuto ou une documentation ?\nSi tu ne sait pas, écrit '!liste'" , "start",
- [Node("Sur quel language tu as besoin d'un tuto?" , "tuto" , tuto_list),Node("Sur quel language tu as besoin d'une documentation?" , "documentation" ,docu_list)])
+ [
+     Node("Sur quel language tu as besoin d'un tuto?" , "tuto" , tuto_list),
+     Node("Sur quel language tu as besoin d'une documentation?" ,"documentation" ,docu_list)])
 
 
 availiable_list = []
