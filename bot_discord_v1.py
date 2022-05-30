@@ -14,12 +14,18 @@ class Node :
         for child in self.list_child_node:
             if child.keyword in txt:
                 child.user_response()
-                
+    def lang_list(self):
+        availiable_list = []
+        for child in self.list_child_node:
+            availiable_list.append(first_node.list_child_node[0].list_child_node[0].list_child_node[0])
+        return availiable_list;
+
 tuto_msg = "Voilà ton tuto pour"
 docu_msg = "Voilà ta docu pour"
 
 first_node = Node("Salut, je suis le bot qui va t'aider !\nOn va voir ce qu'on peut faire...\nTu veut un tuto ou une documentation ?" , "start",
-[Node("Sur quel language tu as besoin d'un tuto?" , "tuto" , 
+[
+Node("Sur quel language tu as besoin d'un tuto?" , "tuto" , 
 [Node(tuto_msg, ["html","html5"],["https://www.youtube.com/watch?v=qsbkZ7gIKnc"]),
  Node(tuto_msg,  ["css"],["https://youtu.be/gXLjWRteuWI"]),
  Node(tuto_msg,["javascript","js"],["https://youtu.be/PkZNo7MFNFg"]),
@@ -74,6 +80,7 @@ Node(docu_msg,"python",["https://docs.python.org/fr/3/"]),
  Node(docu_msg,["java"],["https://docs.oracle.com/en/java/"]),
  Node(docu_msg,["flutter"],["https://docs.flutter.dev/"])
 ])
+,Node("Voici une liste de tout les languages disponible",["je sais pas","je ne sais pas","jsp"],Node.lang_list())
 ])
 
 client = commands.Bot(command_prefix="!")
