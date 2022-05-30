@@ -2,6 +2,9 @@ import discord
 from discord.ext import commands
 
 client = commands.Bot(command_prefix="!", description="Bot Daiiruin")
+
+### Class de l'arbre ###
+
 class Node :
     def __init__(self, question, keyword, list_child_node):
         self.question = question
@@ -83,11 +86,13 @@ Node(docu_msg,"python",["https://docs.python.org/fr/3/"]),
 ,Node("Voici une liste de tout les languages disponible",["je sais pas","je ne sais pas","jsp"],Node.lang_list())
 ])
 
-client = commands.Bot(command_prefix="!")
+### Attendre le print dans la console pour être sûr que tout est bon ###
 
 @client.event
 async def on_ready():
     print("Le bot est prêt !")
+
+### Juste des tests ###
 
 @client.command()
 async def test(ctx):
@@ -95,36 +100,44 @@ async def test(ctx):
     await ctx.send(first_node.list_child_node[0].list_child_node[0].list_child_node)
     await ctx.send(first_node.list_child_node[0].list_child_node[0].keyword)
 
+### Commande d'aide pour un language de programmation ( "!" )###
+
 @client.command()
 async def aide(ctx):
     await ctx.send(first_node.question)
 
+    ### Fonction pour voir si le message viens bien de la personne en question et pas une autre ###
     def check(message):
         return message.author == ctx.message.author
     
+    ### On attend la réponse de l'utilisateur
     reponse = await client.wait_for("message", check = check)
+    ### On regarde si le message est dans la liste contenant le mot clé tuto
     if reponse.content in first_node.list_child_node[0].keyword:
         await ctx.send(first_node.list_child_node[0].question)
+        ### On attend encore la réponse de l'utilisateur
         reponse2 = await client.wait_for("message", check = check)
         print(reponse2.content)
-        print("ok suivant")
-
-        for i in len.Node.availiable_list:
+        ### On fait une boucle for qui vérifie si la réponse est dans la longue liste des language contenant le mot clé de celui-ci
+        for i in range(0,10):
             if reponse2.content in first_node.list_child_node[0].list_child_node[i].keyword:
                 await ctx.send(first_node.list_child_node[0].list_child_node[i].question)
                 await ctx.send(first_node.list_child_node[0].list_child_node[i].list_child_node)
     
-    
+    ### Exactement même procésus que pour le tuto mais pour la documentation
+
     elif reponse.content in first_node.list_child_node[1].keyword:
         await ctx.send(first_node.list_child_node[1].question)
         reponse2 = await client.wait_for("message", check = check)
         print(reponse2.content)
         print("ok suivant")
 
-        for i in len.Node.availiable_list:
+        for i in range(0,10):
             if reponse2.content in first_node.list_child_node[1].list_child_node[i].keyword:
                 await ctx.send(first_node.list_child_node[1].list_child_node[i].question)
                 await ctx.send(first_node.list_child_node[1].list_child_node[i].list_child_node)
+
+### Juste une fonction qui permettera de supprimer des messages ( ici 40... )
 
 @client.event
 async def on_message(message):
