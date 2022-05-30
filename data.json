@@ -1,0 +1,109 @@
+{
+  "html": {
+    "documentations": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics",
+    "video": ""
+  },
+  "css": {
+    "documentations": "https://devdocs.io/css/",
+    "video": ""
+  },
+  "javascript": {
+    "documentations": " https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide",
+    "video": ""
+  },
+  "scss": {
+    "documentations": "https://sass-lang.com/guide",
+    "video": ""
+  },
+  "react": {
+    "documentations": "https://reactjs.org/docs/getting-started.html",
+    "video": ""
+  },
+  "vue": {
+    "documentations": "https://vuejs.org/guide/introduction.html",
+    "video": ""
+  },
+  "next": {
+    "documentations": "https://nextjs.org/docs/getting-started",
+    "video": ""
+  },
+  "solidjs": {
+    "documentations": "https://www.solidjs.com/guides/getting-started",
+    "video": ""
+  },
+  "remix": {
+    "documentations": "https://remix.run/docs/en/v1",
+    "video": ""
+  },
+  "prisma": {
+    "documentations": "https://www.prisma.io/docs/",
+    "video": ""
+  },
+  "strapi": {
+    "documentations": "https://strapi.io/resource-center",
+    "video": ""
+  },
+  "tailwindcss": {
+    "documentations": "https://tailwindcss.com/docs/installation",
+    "video": ""
+  },
+  "bootstrap": {
+    "documentations": "https://getbootstrap.com/docs/5.2/getting-started/introduction/",
+    "video": ""
+  },
+  "python": {
+    "documentations": "https://docs.python.org/3/",
+    "video": ""
+  },
+  "C": {
+    "documentations": "https://docs.microsoft.com/en-us/cpp/c-language/?view=msvc-170",
+    "video": ""
+  },
+  "C++": {
+    "documentations": "https://docs.microsoft.com/en-us/cpp/cpp/?view=msvc-170",
+    "video": ""
+  },
+  "C#": {
+    "documentations": "https://docs.microsoft.com/en-us/dotnet/csharp/",
+    "video": ""
+  },
+  "MarkDown": {
+    "documentations": "https://www.markdownguide.org/",
+    "video": ""
+  },
+  "php": {
+    "documentations": "https://www.freecodecamp.org/news/build-a-website-from-start-to-finish-using-wordpress-and-php/",
+    "video": ""
+  },
+  "git": {
+    "documentations": "",
+    "video": "https://www.freecodecamp.org/news/git-and-github-crash-course/"
+  },
+  "NodeJs": {
+    "documentations": "https://nodejs.org/api/documentation.html",
+    "video": ""
+  },
+  "sql": {
+    "documentations": "https://docs.microsoft.com/en-us/sql/?view=sql-server-ver16",
+    "video": ""
+  },
+  "postgresql": {
+    "documentations": "https://www.postgresql.org/docs/",
+    "video": ""
+  },
+  "flutter": {
+    "documentations": "https://docs.flutter.dev/",
+    "video": "https://www.youtube.com/watch?v=VPvVD8t02U8&feature=youtu.be"
+  },
+  "svelte": {
+    "documentations": "https://www.freecodecamp.org/news/want-to-learn-svelte-heres-our-free-15-part-course-by-noah-kaufman/",
+    "video": ""
+  },
+  "java": {
+    "documentations": "https://docs.oracle.com/en/java/",
+    "video": ""
+  },
+  "*": {
+    "url": "https://devdocs.io/"
+  }
+}
