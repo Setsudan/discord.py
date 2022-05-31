@@ -45,7 +45,8 @@ first_node = Node(
 "Salut, je suis le bot qui va t'aider !\nOn va voir ce qu'on peut faire...\nTu veut un tuto ou une documentation ?\nSi tu ne sait pas, écrit '!liste'" , "start",
  [
      Node("Sur quel language tu as besoin d'un tuto?" , "tuto" , tuto_list),
-     Node("Sur quel language tu as besoin d'une documentation?" ,"documentation" ,docu_list)])
+     Node("Sur quel language tu as besoin d'une documentation?" ,"documentation" ,docu_list)
+     ])
 
 
 availiable_list = []
@@ -58,15 +59,19 @@ for child in first_node.list_child_node[0].list_child_node:
 
 @client.event
 async def on_ready():
-    print("Le bot est prêt !")
+    print(f'\n\nLogged in as: {client.user} \nVersion: {discord.__version__}\n')
+    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="porn"))
 
-### Juste des tests ###
+### Liste des commandes ###
 
 @client.command()
-async def test(ctx):
-    print("test effecuté")
-    await ctx.send(first_node.list_child_node[0].list_child_node[0].list_child_node)
-    await ctx.send(first_node.list_child_node[0].list_child_node[0].keyword)
+async def me(ctx):
+    await ctx.channel.purge(limit=1)
+    author = ctx.author
+    desc = author.roles
+    embed=discord.Embed(title=author.display_name, description=desc, color=0xFF5733)
+    embed.set_thumbnail(url=author.avatar_url)
+    await ctx.send(embed=embed)
 
 
 @client.command()
