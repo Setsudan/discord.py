@@ -70,6 +70,7 @@ async def test(ctx):
     await ctx.send(first_node.list_child_node[0].list_child_node[0].list_child_node)
     await ctx.send(first_node.list_child_node[0].list_child_node[0].keyword)
 
+## Envoie une carte d'utilisateur avec la liste des roles correspondant##
 @client.command()
 async def me(ctx):
     await ctx.channel.purge(limit=1)
@@ -85,13 +86,20 @@ async def me(ctx):
     embed.add_field(name="Roles", value=roles, inline=True)
     await ctx.send(embed=embed)
 
-
+## Envoie la liste des languages disponible ##
+print("liste dispo")
 @client.command()
 async def liste(ctx):
-    msg_content = ',\n '.join(data.keys())
-    await ctx.send("voici la liste des languages disponible pour le moment")
-    await ctx.send(msg_content)
-    await ctx.send("Rappeler le bot avec !aide et dites nous votre choix parmi la liste disponible")
+    embed= discord.Embed(title="Liste des languages disponibles",description="liste des docus et tuto dispo")
+    for lang in all_lang:
+        linkToVideo =  data[lang]["tuto"]
+        linkToVideo = "\n - ".join(linkToVideo)
+        linkToDocu = data[lang]["documentation"]
+        linkToDocu = "\n - ".join(linkToDocu)
+        desc = "Lien vers la vidéo : \n" + linkToVideo + "\n" + "Lien vers la docu : \n" + linkToDocu
+        embed.add_field(name=lang, value=str(desc), inline=False)
+    await ctx.send(embed=embed)
+    
 
 ### Commande d'aide pour un language de programmation ( "!" )###
 
