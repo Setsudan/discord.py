@@ -68,8 +68,13 @@ async def on_ready():
 async def me(ctx):
     await ctx.channel.purge(limit=1)
     author = ctx.author
-    desc = author.roles
-    embed=discord.Embed(title=author.display_name, description=desc, color=0xFF5733)
+    roles_list = []
+    for role in author.roles:
+        roles_list.append(role.name)
+    roles_list.pop(0)
+    roles = "\n - ".join(roles_list)
+    desc = "Tu es :" + roles
+    embed=discord.Embed(title=author.display_name, description=desc, color=author.color)
     embed.set_thumbnail(url=author.avatar_url)
     await ctx.send(embed=embed)
 
