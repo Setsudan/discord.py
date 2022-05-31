@@ -65,6 +65,12 @@ async def on_ready():
 ### Liste des commandes ###
 
 @client.command()
+async def test(ctx):
+    print("test effecuté")
+    await ctx.send(first_node.list_child_node[0].list_child_node[0].list_child_node)
+    await ctx.send(first_node.list_child_node[0].list_child_node[0].keyword)
+
+@client.command()
 async def me(ctx):
     await ctx.channel.purge(limit=1)
     author = ctx.author
