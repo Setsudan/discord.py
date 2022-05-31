@@ -1,13 +1,14 @@
 from flask import Flask
 from threading import Thread
 
-# Pour laisser le bot en ligne 24/7
+#? Pour laisser le bot en ligne 24/7 avec Replit
+#* Pas nécéssaire mais une des options que l'on a choisi de rajouter
 
 app = Flask('')
 
 @app.route('/')
 def home():
-    return "This Webserver is running to keep a naive bayes agent alive, agent feeds discord bot"
+    return "Ce site garde un bot en vie"
 
 def run():
   app.run(host='0.0.0.0',port=8080)
