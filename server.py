@@ -1,6 +1,8 @@
 from flask import Flask
 from threading import Thread
 
+# Pour laisser le bot en ligne 24/7
+
 app = Flask('')
 
 @app.route('/')

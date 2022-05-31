@@ -1,7 +1,9 @@
 import discord
 import json
 from discord.ext import commands
-import os
+from decouple import config
+
+DiscordToken = config("TOKEN")
 
 with open("data.json") as json_data:
     data = json.load(json_data)
@@ -122,4 +124,4 @@ async def on_message(message):
 
     await client.process_commands(message)
 
-client.run(os.getenv("TOKEN"))
+client.run(DiscordToken)
