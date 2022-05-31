@@ -79,11 +79,11 @@ async def me(ctx):
         roles_list.append(role.name)
     roles_list.pop(0)
     roles = "\n - ".join(roles_list)
-    if author.activity == "None":
+    if author.activity == None:
         activity = "Ne fait rien"
     else:
         activity = author.activity
-    embed=discord.Embed(title=author.display_name, description=activity.activity, color=author.color)
+    embed=discord.Embed(title=author.display_name, description=author.activities, color=author.color)
     embed.set_thumbnail(url=author.avatar_url)
     embed.add_field(name="Roles", value=roles, inline=True)
     await ctx.send(embed=embed)
