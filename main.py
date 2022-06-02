@@ -120,10 +120,12 @@ async def aide(ctx):
             if reponse2.content in first_node.list_child_node[0].list_child_node[i].keyword:
                 await ctx.send(first_node.list_child_node[0].list_child_node[i].question)
                 await ctx.send(first_node.list_child_node[0].list_child_node[i].list_child_node)
+    else:
+        await ctx.send("Je n'ai pas compris votre requête, veuillez choisir entre\n[tuto] [documentation]\net rappelez le bot avec [!aide]")
     
     ###? Exactement même procésus que pour le tuto mais pour la documentation
 
-    elif first_node.list_child_node[1].keyword in reponse.content:
+    if first_node.list_child_node[1].keyword in reponse.content:
         await ctx.send(first_node.list_child_node[1].question)
         reponse2 = await client.wait_for("message", check = check)
         print(reponse2.content)
@@ -133,6 +135,8 @@ async def aide(ctx):
             if reponse2.content in first_node.list_child_node[1].list_child_node[i].keyword:
                 await ctx.send(first_node.list_child_node[1].list_child_node[i].question)
                 await ctx.send(first_node.list_child_node[1].list_child_node[i].list_child_node)
+    else:
+        await ctx.send("Je n'ai pas compris votre requête, veuillez choisir entre\n[tuto] [documentation]\net rappelez le bot avec [!aide]")
 
 ###? fonction permettant de supprimer 40 messages
 
